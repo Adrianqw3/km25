@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://jsidwv3pr6yb"
+path="res://.godot/imported/ovni.dialogue-30e597061414224614e741c9ae071c02.tres"
+
+[deps]
+
+source_file="res://dialogos/ovni.dialogue"
+dest_files=["res://.godot/imported/ovni.dialogue-30e597061414224614e741c9ae071c02.tres"]
+
+[params]
+
+defaults=true

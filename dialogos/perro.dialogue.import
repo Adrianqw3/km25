@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cme5m32pn5fhc"
+path="res://.godot/imported/perro.dialogue-4277e9bace86254e6ed2c34d6d3f2828.tres"
+
+[deps]
+
+source_file="res://dialogos/perro.dialogue"
+dest_files=["res://.godot/imported/perro.dialogue-4277e9bace86254e6ed2c34d6d3f2828.tres"]
+
+[params]
+
+defaults=true

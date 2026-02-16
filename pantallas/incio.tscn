@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://dyoyyegpukh2"]
+
+[ext_resource type="Script" uid="uid://cyeitraa1ews0" path="res://scripts/inicio.gd" id="1_4w7o2"]
+[ext_resource type="Texture2D" uid="uid://bf8hyum0sew60" path="res://spirtes/fondos/bosque fondo.png" id="2_vcrk1"]
+[ext_resource type="Texture2D" uid="uid://b5ej33ex8vxu7" path="res://spirtes/ui_game/ui_titulo.png" id="3_ty024"]
+[ext_resource type="Texture2D" uid="uid://4i006q6p6aum" path="res://spirtes/ui_game/boton inicop.png" id="4_4exqa"]
+[ext_resource type="Texture2D" uid="uid://0i7pfd6t4xoa" path="res://spirtes/ui_game/boton inicio_push.png" id="5_iu4xj"]
+[ext_resource type="Texture2D" uid="uid://df0sqbnegxn1l" path="res://spirtes/ui_game/engranaje.png" id="6_4v0mr"]
+[ext_resource type="FontFile" uid="uid://snla2wu1lug2" path="res://DigitalDisco-Thin.ttf" id="6_vcrk1"]
+[ext_resource type="Texture2D" uid="uid://dxopmb788212l" path="res://spirtes/ui_game/engranaje_push.png" id="7_vpqkl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_km31k"]
+font = ExtResource("6_vcrk1")
+font_color = Color(0.933333, 0.764706, 0.603922, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ty024"]
+font = ExtResource("6_vcrk1")
+font_color = Color(0.933333, 0.764706, 0.603922, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4w7o2")
+
+[node name="BosqueFondo" type="Sprite2D" parent="."]
+position = Vector2(128, 72)
+texture = ExtResource("2_vcrk1")
+
+[node name="UiTitulo" type="Sprite2D" parent="BosqueFondo"]
+position = Vector2(5, -31)
+texture = ExtResource("3_ty024")
+
+[node name="inicio" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 94.0
+offset_top = 72.0
+offset_right = 168.0
+offset_bottom = 98.0
+texture_normal = ExtResource("4_4exqa")
+texture_pressed = ExtResource("5_iu4xj")
+
+[node name="Label" type="Label" parent="inicio"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 62.0
+offset_bottom = 21.0
+text = " Inicio"
+label_settings = SubResource("LabelSettings_km31k")
+
+[node name="salida" type="TextureButton" parent="."]
+z_index = 1
+offset_left = 94.0
+offset_top = 104.0
+offset_right = 168.0
+offset_bottom = 132.0
+texture_normal = ExtResource("4_4exqa")
+texture_pressed = ExtResource("5_iu4xj")
+
+[node name="Label" type="Label" parent="salida"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 5.0
+offset_right = 55.0
+offset_bottom = 28.0
+text = "salida"
+label_settings = SubResource("LabelSettings_ty024")
+
+[node name="opciones" type="TextureButton" parent="."]
+offset_left = 234.0
+offset_top = 5.0
+offset_right = 249.0
+offset_bottom = 20.0
+texture_normal = ExtResource("6_4v0mr")
+texture_pressed = ExtResource("7_vpqkl")
+texture_hover = ExtResource("7_vpqkl")
+metadata/_edit_use_anchors_ = true

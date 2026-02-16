@@ -1,0 +1,38 @@
+~ start
+if EstadosNpc.npcs.perro.conocido == false:
+	player: hola amigo… ¿cómo estás?
+	Perro: *grrr…
+	- *Dejar que te huela
+		Perro: *sniff sniff*
+		Perro: *mueve la cola*
+		- *Acariciarlo
+			player: buen perro…
+			Perro: *wag wag*
+			player: Al pasarle la mano por el cuello noto algo.
+			player: Un collar viejo.
+			player: Leo el nombre…
+			player: Lazi.
+			set EstadosNpc.npcs.perro.conocido=true
+			set EstadosNpc.npcs.perro.estado = 1
+			player: También hay una dirección.
+			player: Dowfile. Calle Los Robles, 124.
+			Lazi: *wag wag*
+			player: ¿Quieres que te lleve a casa?
+			Lazi: *wag wag*
+			player: ¿La llevo a casa?
+			- Sí
+				player: Vamos… sube.
+				Lazi: *agita la cola y te sigue*
+				set EstadosNpc.npcs.perro.iniciada = true
+				set EstadosNpc.npcs.perro.estado = 1
+			- No
+				player: Lo siento… no puedo ayudarte.
+				Lazi: *whine…*
+				set EstadosNpc.npcs.perro.abandonada = true
+				set EstadosNpc.npcs.perro.conocido= true
+	- *Alejarte
+		player: Me alejo.
+		set EstadosNpc.npcs.perro.conocido= true
+else :
+	Lazi: gua gua
+=> END

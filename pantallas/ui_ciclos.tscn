@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://h3dbmmxc0nfw"]
+
+[ext_resource type="Texture2D" uid="uid://rjb1xgnjobut" path="res://spirtes/ui_game/barra.png" id="1_d4wf1"]
+[ext_resource type="Script" uid="uid://bdpmw32qwpqt4" path="res://scripts/pomodoroui.gd" id="1_uo0fp"]
+[ext_resource type="Texture2D" uid="uid://dt8ljktlw0s3a" path="res://spirtes/ui_game/ciclo.png" id="2_uo0fp"]
+[ext_resource type="Texture2D" uid="uid://bsljo5trdraa3" path="res://spirtes/ui_game/barra_2.png" id="2_xig26"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uo0fp")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 12.0
+max_value = 1.0
+step = 0.0
+value = 0.1
+texture_under = ExtResource("2_xig26")
+texture_over = ExtResource("2_xig26")
+texture_progress = ExtResource("1_d4wf1")
+tint_progress = Color(0.396313, 0.701519, 0.197365, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 196.0
+offset_right = 256.0
+offset_bottom = 12.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_uo0fp")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_uo0fp")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_uo0fp")
+expand_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_uo0fp")
+expand_mode = 2

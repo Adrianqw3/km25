@@ -1,0 +1,29 @@
+~ start
+if EstadosNpc.npcs.ovni.conocido== false:
+	player: [shake]!!!!! 
+	palyer: [shake] un.npcs ovni !!!!
+	player : [shake] dios mio son reales !!
+	palyer : pero que hace aqui?. y por que se detuvo? 
+	player: espera va lento ...
+	palyer: como si no le importara que lo vean o que tubiera una falla 
+	player:Si voy con cuidado… tal vez pueda seguirlo.
+	player: Deberia seguirlo? 
+	- si
+		player: bueno Vamos en busca de lo desconocido!! * emocionado
+		set EstadosNpc.npcs.ovni.iniciado = true 
+		set EstadosNpc.npcs.ovni.estado= 1
+		set EstadosNpc.npcs.ovni.conocido = true
+	- no 
+		player: [shake] No. no vale [speed=0.2] la pena ni los problemas tengo [/speed] miedo
+		set EstadosNpc.npcs.ovni.conocido = true 
+else :
+	player: es el mismo.npcs ovni..
+	player: debaria seguirlo ahora?
+	- si
+		set EstadosNpc.npcs.ovni.iniciado = true 
+		set EstadosNpc.npcs.ovni.estado= 1
+		set EstadosNpc.npcs.ovni.conocido = true
+	- no 
+		player: sigo teniendo miedo mejor no 
+		set EstadosNpc.npcs.ovni.conocido = true
+=> END

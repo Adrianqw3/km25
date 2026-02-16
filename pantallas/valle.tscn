@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1dfkc1l6ti40"]
+
+[ext_resource type="Texture2D" uid="uid://cywdyekw1oyjx" path="res://spirtes/fondos/valle_f_secundario.png" id="1_lu4j0"]
+[ext_resource type="Script" uid="uid://ckfep88m711xp" path="res://scripts/valle/nubes.gd" id="1_qftvv"]
+[ext_resource type="Texture2D" uid="uid://bfhodrwnccaku" path="res://spirtes/fondos/valle_f_principal.png" id="2_qftvv"]
+[ext_resource type="Texture2D" uid="uid://brg8oi6jgdkeo" path="res://spirtes/fondos/pista_bosq.png" id="3_1wj0w"]
+[ext_resource type="Script" uid="uid://u37myxix3ujq" path="res://scripts/valle/valle.gd" id="3_w1og0"]
+[ext_resource type="PackedScene" uid="uid://cot67mr5g0y2y" path="res://pantallas/auto.tscn" id="4_w1og0"]
+[ext_resource type="Script" uid="uid://c3w7s3mdvhbcr" path="res://scripts/valle/pista.gd" id="5_w1og0"]
+[ext_resource type="PackedScene" uid="uid://h3dbmmxc0nfw" path="res://pantallas/ui_ciclos.tscn" id="8_gxwjm"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="nubes" type="Node2D" parent="."]
+script = ExtResource("1_qftvv")
+
+[node name="ValleFSecundario" type="Sprite2D" parent="nubes"]
+texture = ExtResource("1_lu4j0")
+centered = false
+
+[node name="ValleFSecundario2" type="Sprite2D" parent="nubes"]
+position = Vector2(256, 0)
+texture = ExtResource("1_lu4j0")
+centered = false
+
+[node name="valle" type="Node2D" parent="."]
+script = ExtResource("3_w1og0")
+speed = 30
+
+[node name="ValleFPrincipal" type="Sprite2D" parent="valle"]
+z_index = 1
+position = Vector2(256, 0)
+texture = ExtResource("2_qftvv")
+centered = false
+
+[node name="ValleFPrincipal2" type="Sprite2D" parent="valle"]
+z_index = 1
+texture = ExtResource("2_qftvv")
+centered = false
+
+[node name="pista" type="Node2D" parent="."]
+script = ExtResource("5_w1og0")
+
+[node name="PistaBosq" type="Sprite2D" parent="pista"]
+z_index = 2
+texture = ExtResource("3_1wj0w")
+centered = false
+
+[node name="PistaBosq2" type="Sprite2D" parent="pista"]
+z_index = 2
+position = Vector2(256, 0)
+texture = ExtResource("3_1wj0w")
+centered = false
+
+[node name="auto" parent="." instance=ExtResource("4_w1og0")]
+z_index = 4
+position = Vector2(112, 116)
+
+[node name="Control" parent="." instance=ExtResource("8_gxwjm")]
+z_index = 7

@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cksvaynx86cdy"]
+
+[ext_resource type="Script" uid="uid://ct36cati6n76j" path="res://scripts/bosque/bosque.gd" id="1_1pktm"]
+[ext_resource type="Texture2D" uid="uid://bf8hyum0sew60" path="res://spirtes/fondos/bosque fondo.png" id="1_4do48"]
+[ext_resource type="Script" uid="uid://cdxwaoqbfty0u" path="res://scripts/bosque/fondobase_bosque.gd" id="2_lbk6p"]
+[ext_resource type="Texture2D" uid="uid://brg8oi6jgdkeo" path="res://spirtes/fondos/pista_bosq.png" id="2_wvcvh"]
+[ext_resource type="PackedScene" uid="uid://cot67mr5g0y2y" path="res://pantallas/auto.tscn" id="3_1pktm"]
+[ext_resource type="Script" uid="uid://bx6arb1jy4wmr" path="res://scripts/bosque/pista.gd" id="4_5gtdv"]
+[ext_resource type="PackedScene" uid="uid://h3dbmmxc0nfw" path="res://pantallas/ui_ciclos.tscn" id="7_w7bg5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1pktm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="fondobase" type="Node2D" parent="."]
+script = ExtResource("2_lbk6p")
+
+[node name="BosqueFondo" type="Sprite2D" parent="fondobase"]
+texture_filter = 1
+texture = ExtResource("1_4do48")
+centered = false
+
+[node name="BosqueFondo2" type="Sprite2D" parent="fondobase"]
+texture_filter = 1
+position = Vector2(256, 0)
+texture = ExtResource("1_4do48")
+centered = false
+
+[node name="pista" type="Node2D" parent="."]
+script = ExtResource("4_5gtdv")
+
+[node name="PistaBosq2" type="Sprite2D" parent="pista"]
+z_index = 1
+texture_filter = 1
+position = Vector2(256, 7.27596e-12)
+texture = ExtResource("2_wvcvh")
+centered = false
+flip_h = true
+
+[node name="PistaBosq" type="Sprite2D" parent="pista"]
+z_index = 1
+texture_filter = 1
+position = Vector2(2.27374e-13, 7.27596e-12)
+texture = ExtResource("2_wvcvh")
+centered = false
+
+[node name="auto" parent="." instance=ExtResource("3_1pktm")]
+z_index = 2
+position = Vector2(80, 112)
+
+[node name="Control" parent="." instance=ExtResource("7_w7bg5")]
+z_index = 7

@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://u1hcxx55eswo"]
+
+[ext_resource type="PackedScene" uid="uid://cot67mr5g0y2y" path="res://pantallas/auto.tscn" id="1_2xo18"]
+[ext_resource type="Script" uid="uid://djc6ghrtcw118" path="res://scripts/desierto/cielo.gd" id="2_cshim"]
+[ext_resource type="Texture2D" uid="uid://bh1o41xry6jj" path="res://spirtes/fondos/desierto.png" id="3_mtmjm"]
+[ext_resource type="Texture2D" uid="uid://75x5uucoj8gd" path="res://spirtes/fondos/desierto_f.png" id="5_hgm22"]
+[ext_resource type="Script" uid="uid://dt7cahlehcgxi" path="res://scripts/desierto/pista.gd" id="6_1xa87"]
+[ext_resource type="Script" uid="uid://bflpumntg6d6a" path="res://scripts/desierto/descierto.gd" id="6_2xo18"]
+[ext_resource type="Texture2D" uid="uid://brg8oi6jgdkeo" path="res://spirtes/fondos/pista_bosq.png" id="7_j38xa"]
+[ext_resource type="PackedScene" uid="uid://h3dbmmxc0nfw" path="res://pantallas/ui_ciclos.tscn" id="8_cshim"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="auto" parent="." instance=ExtResource("1_2xo18")]
+z_index = 4
+position = Vector2(76, 119)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+ignore_rotation = false
+
+[node name="cielo" type="Node2D" parent="."]
+script = ExtResource("2_cshim")
+speed = 35
+
+[node name="Desierto" type="Sprite2D" parent="cielo"]
+texture = ExtResource("3_mtmjm")
+centered = false
+
+[node name="Desierto2" type="Sprite2D" parent="cielo"]
+position = Vector2(256, 0)
+texture = ExtResource("3_mtmjm")
+centered = false
+
+[node name="pista" type="Node2D" parent="."]
+z_index = 2
+script = ExtResource("6_1xa87")
+speed = 50
+
+[node name="PistaBosq" type="Sprite2D" parent="pista"]
+texture = ExtResource("7_j38xa")
+centered = false
+
+[node name="PistaBosq2" type="Sprite2D" parent="pista"]
+position = Vector2(256, 0)
+texture = ExtResource("7_j38xa")
+centered = false
+
+[node name="descierto" type="Node2D" parent="."]
+script = ExtResource("6_2xo18")
+speed = 40
+
+[node name="DesiertoF" type="Sprite2D" parent="descierto"]
+texture = ExtResource("5_hgm22")
+centered = false
+
+[node name="DesiertoF2" type="Sprite2D" parent="descierto"]
+position = Vector2(256, 0)
+texture = ExtResource("5_hgm22")
+centered = false
+
+[node name="Control" parent="." instance=ExtResource("8_cshim")]
