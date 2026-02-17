@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvou4k21ydqam"]
+
+[ext_resource type="Script" uid="uid://f0okb5qb2as8" path="res://node_2d.gd" id="1_xc2sf"]
+[ext_resource type="PackedScene" uid="uid://cr0ljcbgbw2m1" path="res://pantallas/minijuegos/ave.tscn" id="2_1ijjv"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xc2sf")
+
+[node name="ave" parent="." instance=ExtResource("2_1ijjv")]

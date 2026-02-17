@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr0ljcbgbw2m1"]
+
+[ext_resource type="Script" uid="uid://qdvipyeumox4" path="res://scripts/minijuegos/ave.gd" id="1_srngn"]
+[ext_resource type="Texture2D" uid="uid://ia2dvkfxsllj" path="res://icon.svg" id="2_x1x0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkr0k"]
+size = Vector2(9, 9)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_srngn")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(51, 35)
+shape = SubResource("RectangleShape2D_rkr0k")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(1.84774e-06, -8.64267e-07)
+scale = Vector2(0.0683594, 0.0654297)
+texture = ExtResource("2_x1x0m")
