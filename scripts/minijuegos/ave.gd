@@ -1,5 +1,7 @@
 extends Node2D
 
+signal ave_eliminada  
+
 @onready var ave: CharacterBody2D = $CharacterBody2D
 @onready var collider: CollisionShape2D = $CharacterBody2D/CollisionShape2D
 
@@ -12,7 +14,13 @@ var velocity := Vector2.ZERO
 
 func _ready() -> void:
 	randomize()
-	_set_new_target()
+	
+	
+	var centro = area_size / 2
+	if ave.global_position.distance_to(centro) > area_size.length() * 0.4:
+		targetposition = centro
+	else:
+		_set_new_target()
 
 func _physics_process(delta: float) -> void:
 	var dir = (targetposition - ave.global_position).normalized()
@@ -33,6 +41,7 @@ func _input(event):
 	and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		if _mouse_sobre_ave():
+			emit_signal("ave_eliminada") 
 			queue_free()
 
 func _mouse_sobre_ave() -> bool:
