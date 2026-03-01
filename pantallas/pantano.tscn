@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://b45pdcp30vve2"]
+
+[ext_resource type="Texture2D" uid="uid://dwmdqplb7vxm7" path="res://spirtes/fondos/pantano_fondo.png" id="1_butde"]
+[ext_resource type="Texture2D" uid="uid://th4tw7hwngk2" path="res://spirtes/fondos/pantano_fondo1.png" id="2_m2sbm"]
+[ext_resource type="Texture2D" uid="uid://ck0031mwn2ic4" path="res://spirtes/fondos/pantano_fondo2.png" id="3_ofs2s"]
+[ext_resource type="Texture2D" uid="uid://du6kfhql8got4" path="res://spirtes/fondos/pantano_fondo3.png" id="4_r03kw"]
+[ext_resource type="Texture2D" uid="uid://brg8oi6jgdkeo" path="res://spirtes/fondos/pista_bosq.png" id="5_pil8g"]
+[ext_resource type="PackedScene" uid="uid://cot67mr5g0y2y" path="res://pantallas/auto.tscn" id="6_xtf88"]
+[ext_resource type="PackedScene" uid="uid://h3dbmmxc0nfw" path="res://pantallas/ui_ciclos.tscn" id="7_ln7q0"]
+
+[node name="pantano" type="Node2D"]
+
+[node name="base" type="Node2D" parent="."]
+
+[node name="PantanoFondo" type="Sprite2D" parent="base"]
+position = Vector2(128, 72)
+texture = ExtResource("1_butde")
+
+[node name="PantanoFondo2" type="Sprite2D" parent="base"]
+position = Vector2(384, 72)
+texture = ExtResource("1_butde")
+
+[node name="fondo1" type="Node2D" parent="."]
+
+[node name="PantanoFondo1" type="Sprite2D" parent="fondo1"]
+position = Vector2(128, 72)
+texture = ExtResource("2_m2sbm")
+
+[node name="PantanoFondo2" type="Sprite2D" parent="fondo1"]
+position = Vector2(384, 72)
+texture = ExtResource("2_m2sbm")
+
+[node name="fondo2" type="Node2D" parent="."]
+
+[node name="PantanoFondo2" type="Sprite2D" parent="fondo2"]
+position = Vector2(128, 72)
+texture = ExtResource("3_ofs2s")
+
+[node name="PantanoFondo3" type="Sprite2D" parent="fondo2"]
+position = Vector2(384, 72)
+texture = ExtResource("3_ofs2s")
+
+[node name="fondo3" type="Node2D" parent="."]
+
+[node name="PantanoFondo3" type="Sprite2D" parent="fondo3"]
+position = Vector2(128, 72)
+texture = ExtResource("4_r03kw")
+
+[node name="PantanoFondo4" type="Sprite2D" parent="fondo3"]
+position = Vector2(384, 72)
+texture = ExtResource("4_r03kw")
+
+[node name="pista" type="Node2D" parent="."]
+
+[node name="PistaBosq" type="Sprite2D" parent="pista"]
+position = Vector2(128, 64)
+texture = ExtResource("5_pil8g")
+
+[node name="PistaBosq2" type="Sprite2D" parent="pista"]
+position = Vector2(384, 64)
+texture = ExtResource("5_pil8g")
+
+[node name="Node2D" parent="." instance=ExtResource("6_xtf88")]
+position = Vector2(101, 112)
+
+[node name="Control" parent="." instance=ExtResource("7_ln7q0")]
